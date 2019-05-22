@@ -44,6 +44,7 @@ Person.prototype.addToFamily = function(member) {
     if (member instanceof Person && this.family.indexOf(member) !== -1 ) {
         this.family.push(member);
     }
+    return this.family.length;
 }
 
 // PART II 
@@ -51,7 +52,7 @@ Person.prototype.addToFamily = function(member) {
 // 1 - Implement your own version of Array.prototype.map. The function should accept a callback and return a new array with the result of the callback for each value in the array. 
 
 Array.prototype.map = function(callback) {
-//  console.log(this);
+  console.log('My Map!');
   var newArr = [];
   for (var i = 0; i < this.length; i++) {
     newArr.push(callback(this[i], i, this));
@@ -59,7 +60,8 @@ Array.prototype.map = function(callback) {
   return newArr;
 }
 
-var arr = new Array(1, 2, 3);
+//var arr = new Array(1, 2, 3);
+var arr = [1, 2, 3];
 var newArr = arr.map(function(n) {
   return n * 2;
 });
